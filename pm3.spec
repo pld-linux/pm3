@@ -1,16 +1,20 @@
 Summary:	The Polytechnique Montreal Modula-3 distribution
 Summary(pl):	Dystrybucja Polytechnique Montreal Modula-3
 Name:		pm3
-Version:	1.1.13
+Version:	1.1.15
 Release:	1
 License:	Open Source, mostly BSD like, some LGPL/GPL
 Group:		Development/Languages/Modula3
-Source0:	ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}.tgz
-Source1:	pm3-LINUXLIBC6
-Source2:	pm3-COMMON
-Patch0:		pm3-readline.patch
-Patch1:		pm3-ncurses.patch
-Patch2:		pm3-m3gdb.patch
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
+Source0:	ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}-src.tgz
+Source1:	%{name}-LINUXLIBC6
+Source2:	%{name}-COMMON
+Source3:	ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}-LINUXLIBC6-boot.tgz
+Patch0:		%{name}-readline.patch
+Patch1:		%{name}-ncurses.patch
+Patch2:		%{name}-m3gdb.patch
+Patch3:		%{name}-glibc.patch
 URL:		http://m3.polymtl.ca/m3/
 # PM3 runs on several platforms but for Linux only on i386.
 # Since RPM is mostly popular on Linux... let's stick to i386/Linux
@@ -19,28 +23,29 @@ ExclusiveOS:	Linux
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Polytechnique Montreal Modula-3 distribution is based on the DEC SRC
-Modula-3 programming environment.
+The Polytechnique Montreal Modula-3 distribution is based on the DEC
+SRC Modula-3 programming environment.
 
 Modula-3 is a systems programming language that descends from Mesa,
 Modula-2, Cedar, and Modula-2+. It also resembles its cousins Object
 Pascal, Oberon, and Euclid.
 
-The goal of Modula-3 is to be as simple and safe as it can be while meeting
-the needs of modern systems programmers. Instead of exploring new features,
-they studied the features of the Modula family of languages that have
-proven themselves in practice and tried to simplify them into a harmonious
-language. They found that most of the successful features were aimed at one
-of two main goals: greater robustness, and a simpler, more systematic type
-system.
+The goal of Modula-3 is to be as simple and safe as it can be while
+meeting the needs of modern systems programmers. Instead of exploring
+new features, they studied the features of the Modula family of
+languages that have proven themselves in practice and tried to
+simplify them into a harmonious language. They found that most of the
+successful features were aimed at one of two main goals: greater
+robustness, and a simpler, more systematic type system.
 
-Modula-3 retains one of Modula-2's most successful features, the provision
-for explicit interfaces between modules. It adds objects and classes,
-exception handling, garbage collection, lightweight processes (or threads),
-and the isolation of unsafe features.
+Modula-3 retains one of Modula-2's most successful features, the
+provision for explicit interfaces between modules. It adds objects and
+classes, exception handling, garbage collection, lightweight processes
+(or threads), and the isolation of unsafe features.
 
-A large number of platform independant libraries are available for easily
-constructing distributed, graphical, multi-threaded applications.
+A large number of platform independant libraries are available for
+easily constructing distributed, graphical, multi-threaded
+applications.
 
 %description -l pl
 Dystrybucja Polytechnique Montreal Modula-3 bazuje na ¶rodowisku
@@ -58,9 +63,9 @@ jêzyk. Stwierdzili, ¿e wiêkszo¶æ cech zosta³a osi±gniêta w dwóch
 g³ównych celach: wiêkszych mo¿liwo¶ciach i prostrzym, bardziej
 systematycznym systemie typów.
 
-Modula-3 zachowuje najlepsze cechy Moduli-2, zapas interfejsów pomiêdzy
-modu³ami. Dodaje obiekty i klasy, obs³ugê wyj±tków, garbage collector,
-lekkie procesy (lub w±tki) i oddzielenie od niebezpiecznych
+Modula-3 zachowuje najlepsze cechy Moduli-2, zapas interfejsów
+pomiêdzy modu³ami. Dodaje obiekty i klasy, obs³ugê wyj±tków, garbage
+collector, lekkie procesy (lub w±tki) i oddzielenie od niebezpiecznych
 w³a¶ciwo¶ci.
 
 S± dostêpne wiele bibliotek niezale¿nych od platformy dla ³atwego
@@ -70,10 +75,12 @@ tworzenia rozproszonych, graficznych, wielow±tkowych aplikacji.
 Summary:	mtex is used to produce both troff man pages and HTML pages from the same source
 Summary(pl):	mtex do produkcji stron man i HTML z tego samego ¼ród³a
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description mtex
-mtex is used to produce both troff man pages and HTML pages from the same
-source.
+mtex is used to produce both troff man pages and HTML pages from the
+same source.
 
 %description mtex -l pl
 mtex s³u¿y do generowania podrêcznika man w formacie troff oraz HTML z
@@ -83,6 +90,8 @@ tego samego ¼ród³a.
 Summary:	m3doc produces both html and latex/postscript from the same source
 Summary(pl):	m3doc do produkcji HTML i LaTeX-a/postscripta z tego samego ¼ród³a
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3doc
 m3doc produces both html and latex/postscript from the same source.
@@ -95,6 +104,8 @@ samego ¼ród³a.
 Summary:	Modula-3 LL(1) parser generator
 Summary(pl):	Generator parserów LL(1) do Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3coco
 Modula-3 LL(1) parser generator.
@@ -106,6 +117,8 @@ Generator parserów LL(1) do Moduli-3.
 Summary:	Library to build tempfiles
 Summary(pl):	Biblioteka do budowania tempfile'i
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description tempfiles
 Library to build tempfiles.
@@ -117,6 +130,8 @@ Biblioteka do budowania tempfile'i.
 Summary:	SGML/XML parsing library
 Summary(pl):	Biblioteka parsuj±ca SGML/XML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgml
 SGML/XML parsing library.
@@ -128,6 +143,8 @@ Biblioteka parsuj±ca SGML/XML.
 Summary:	Translate commented Modula-3 units into html files
 Summary(pl):	Konwerter skomentowanych plików Modula-3 do HTML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3tosgml
 Translate commented Modula-3 units into html files.
@@ -139,6 +156,8 @@ Narzêdzie do t³umaczenia skomentowanych plików w Moduli-3 na HTML.
 Summary:	filter HTML files and convert HTML files to LaTeX
 Summary(pl):	Filtr do plików HTML i konwerter do LaTeX-a
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmlconv
 filter HTML files and convert HTML files to LaTeX.
@@ -150,6 +169,8 @@ FIltr do plików HTML i konwerter HTML do LaTeX-a.
 Summary:	Group several HTML files into a linear document
 Summary(pl):	Konwerter grupuj±cy wiele plików HTML w jeden
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmllinear
 Group several HTML files into a linear document.
@@ -161,6 +182,8 @@ Konwerter grupuj±cy wiele plików HTML w jeden ci±g³y dokument.
 Summary:	SGML related tools
 Summary(pl):	Narzêdzia zwi±zane z SGML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmltools
 SGML related tools.
@@ -172,6 +195,8 @@ Narzêdzia zwi±zane z SGML.
 Summary:	Convert Modula-3 units from LaTeX markup to HTML markup
 Summary(pl):	Konwerter plików Modula-3 z LaTeX-a do HTML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3textohtml
 Convert Modula-3 units from LaTeX markup to HTML markup.
@@ -183,6 +208,8 @@ Konwerter plików Modula-3 z LaTeX-a do HTML.
 Summary:	Convert a SGML file to its canonical form
 Summary(pl):	Konwerter SGML do postaci kanonicznej
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmlnormalize
 Convert a SGML file to its canonical form.
@@ -194,6 +221,8 @@ Narzêdzie konwertujêce pliki SGML do postaci kanonicznej.
 Summary:	Show the tree structure of a SGML file
 Summary(pl):	Wy¶wietlanie struktury drzewiastej plików SGML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmlstructure
 Show the tree structure of a SGML file.
@@ -205,6 +234,8 @@ Narzêdzie wy¶wietlaj±ce strukturê drzewiast± pliku SGML.
 Summary:	Convert back a Modula-3 unit from HTML to M3
 Summary(pl):	Konwerter plików Modula-3 z HTML z powrotem do Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmltom3
 Convert back a Modula-3 unit from HTML to M3.
@@ -216,10 +247,12 @@ Konwerter plików Modula-3 z postaci HTML z powrotem do Moduli-3.
 Summary:	Sil is a simple drawing program that runs on Windows/NT
 Summary(pl):	Sil - prosty program rysuj±cy pod Windows/NT
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sil
-Sil is a simple drawing program that runs on Windows/NT, Sample of native
-Windows programming in Modula-3.
+Sil is a simple drawing program that runs on Windows/NT, Sample of
+native Windows programming in Modula-3.
 
 %description sil -l pl
 Sil to prosty program do rysowania dzia³aj±cy pod Windows/NT -
@@ -229,6 +262,8 @@ przyk³ad natywnego programowania pod Windows w Moduli-3.
 Summary:	Modula-3 compiler's IL definition
 Summary(pl):	Definicje IL dla kompilatora Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3middle
 Modula-3 compiler's IL definition.
@@ -240,6 +275,8 @@ Definicje IL dla kompilatora Modula-3.
 Summary:	Modula-3 compiler front-end
 Summary(pl):	Frontend kompilatora Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3front
 Modula-3 compiler front-end.
@@ -251,17 +288,21 @@ Frontend kompilatora Modula-3.
 Summary:	Modula-3 prelinker
 Summary(pl):	Prelinker Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3linker
 Modula-3 prelinker.
 
-%description m3linder -l pl
+%description m3linker -l pl
 Prelinker Modula-3.
 
 %package m3objfile
 Summary:	Modula-3 object file writers
 Summary(pl):	Narzêdzia zapisuj±ce pliki obiektowe Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3objfile
 Modula-3 object file writers.
@@ -273,6 +314,8 @@ Narzêdzia zapisuj±ce pliki obiektowe Modula-3.
 Summary:	Linux ELF and Windows/NT x86 back-ends
 Summary(pl):	Backendy x86 Linux ELF i Windows/NT do Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3back
 Linux ELF and Windows/NT x86 back-ends.
@@ -284,6 +327,8 @@ Backendy x86 Linux ELF i Windows/NT do Moduli-3.
 Summary:	Modula-3 compiler driver
 Summary(pl):	Driver kompilatora Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3driver
 Modula-3 compiler driver.
@@ -295,17 +340,23 @@ Driver kompilatora Modula-3.
 Summary:	Standalone back-end program like m3cc that uses m3back, used for testing
 Summary(pl):	Samodzielny backend do testowania
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3staloneback
-Standalone back-end program like m3cc that uses m3back, used for testing.
+Standalone back-end program like m3cc that uses m3back, used for
+testing.
 
 %description m3staloneback -l pl
-Samodzielny backend jak m3cc, który u¿ywa m3back, s³u¿±cy do testowania.
+Samodzielny backend jak m3cc, który u¿ywa m3back, s³u¿±cy do
+testowania.
 
 %package m3loader
 Summary:	An experimental dynamic loader for Windows/NT
 Summary(pl):	Eksperymentalny loader dynamiczny dla Windows/NT
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3loader
 An experimental dynamic loader for Windows/NT.
@@ -317,6 +368,8 @@ Eksperymentalny loader dynamiczny dla Windows/NT.
 Summary:	The quake interpreter used by m3build
 Summary(pl):	Interpreter quake u¿ywany przez m3build
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3quake
 The quake interpreter used by m3build.
@@ -328,6 +381,8 @@ Interpreter quake u¿ywany przez m3build.
 Summary:	Quake builtin functions for m3build
 Summary(pl):	Wbudowane funkcje quake dla m3build
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3templates
 Quake builtin functions for m3build.
@@ -339,6 +394,8 @@ Wbudowane funkcje quake dla m3build.
 Summary:	The Modula-3 compiler
 Summary(pl):	Kompilator Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3-base
 The Modula-3 compiler.
@@ -350,6 +407,8 @@ Kompilator Modula-3.
 Summary:	Cross compiles bootstrap packages for other platforms
 Summary(pl):	Pakiety do kroskompilacji na inne platformy
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3bootstrap
 Cross compiles bootstrap packages for other platforms.
@@ -361,6 +420,8 @@ Pakiety do kroskompilacji na inne platformy.
 Summary:	Export and compiles a new release of PM3 from the CVS repository
 Summary(pl):	Eksport i kompilacja nowej wersji PM3 z repozytorium CVS
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3export
 Export and compiles a new release of PM3 from the CVS repository.
@@ -373,6 +434,8 @@ CVS.
 Summary:	Tests for the Modula-3 compiler
 Summary(pl):	Testy dla kompilatora Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3tests
 Tests for the Modula-3 compiler.
@@ -384,6 +447,8 @@ Testy dla kompilatora Modula-3.
 Summary:	An experimental Modula-3 back-end that uses BURS
 Summary(pl):	Eksperymentalny backend Modula-3 u¿ywaj±cy BURS
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description cg-burs
 An experimental Modula-3 back-end that uses BURS.
@@ -395,6 +460,8 @@ Eksperymentalny backend Modula-3 u¿ywaj±cy BURS.
 Summary:	A line-based coverage analyzer/profiler
 Summary(pl):	Liniowo zorientowany analizator/profiler
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description coverage
 A line-based coverage analyzer/profiler.
@@ -406,6 +473,8 @@ Liniowo zorientowany analizator/profiler.
 Summary:	Modula-3 aware debugger based on gdb
 Summary(pl):	Debugger do Moduli-3 oparty o gdb
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3gdb
 Modula-3 aware debugger based on gdb.
@@ -417,6 +486,8 @@ Debugger do Moduli-3 oparty o gdb.
 Summary:	Modula-3 pretty-printer
 Summary(pl):	Wydruki dla Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description pp
 Modula-3 pretty-printer.
@@ -428,6 +499,8 @@ Wydruki dla Moduli-3.
 Summary:	Wraps Modula-3 source in enough TeX to make it printable
 Summary(pl):	Filtr ¼róde³ Moduli-3 do TeX-a w celu wydruku
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3totex
 Wraps Modula-3 source in enough TeX to make it printable.
@@ -439,6 +512,8 @@ Filtr opakowuj±cy ¼ród³a Moduli-3 w TeX, aby da³o siê je wydrukowaæ.
 Summary:	A simple, generic Set interface
 Summary(pl):	Prosty interfejs Set
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description set
 A simple, generic Set interface.
@@ -450,17 +525,23 @@ Prosty interfejs Set.
 Summary:	A directed graph type, generic over the types labeling nodes and edges
 Summary(pl):	Typ skierowanego grafu, wspólny dla typów nazywaj±cych wêz³y i krawêdzie
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description digraph
-A directed graph type, generic over the types labeling nodes and edges.
+A directed graph type, generic over the types labeling nodes and
+edges.
 
 %description digraph -l pl
-Typ skierowanego grafu, wspólny dla typów nazywaj±cych wêz³y i krawêdzie.
+Typ skierowanego grafu, wspólny dla typów nazywaj±cych wêz³y i
+krawêdzie.
 
 %package table-list
 Summary:	An association-list-based, generic implementation of Table.T
 Summary(pl):	Oparta o association-list, podstawowa implementacja Table.T
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description table-list
 An association-list-based, generic implementation of Table.T.
@@ -472,17 +553,23 @@ Oparta o association-list, podstawowa implementacja Table.T.
 Summary:	Geometry package (Point, Rect, Path, ...) with REAL-valued coordinates
 Summary(pl):	Pakiet geometryczny (Point, Rect, Path...) ze wspó³rzêdnymi rzeczywistymi
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description realgeometry
-Geometry package (Point, Rect, Path, ...) with REAL-valued coordinates.
+Geometry package (Point, Rect, Path, ...) with REAL-valued
+coordinates.
 
 %description realgeometry -l pl
-Pakiet geometryczny (Point, Rect, Path...) ze wspó³rzêdnymi rzeczywistymi.
+Pakiet geometryczny (Point, Rect, Path...) ze wspó³rzêdnymi
+rzeczywistymi.
 
 %package parseparams
 Summary:	A library that helps parse command line arguments
 Summary(pl):	Biblioteka pomocna przy parsowaniu linii poleceñ
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description parseparams
 A library that helps parse command line arguments.
@@ -494,6 +581,8 @@ Biblioteka pomagaj±ca przy parsowaniu argumentów linii poleceñ.
 Summary:	A library containing a small Lisp interpreter
 Summary(pl):	Biblioteka z ma³ym interpreterem Lispa
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description slisp
 A library containing a small Lisp interpreter.
@@ -505,6 +594,8 @@ Biblioteka zawieraj±ca ma³y interpreter Lispa.
 Summary:	Search for Modula-3 packages and files
 Summary(pl):	Wyszukiwarka modu³ów i plików Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3where
 Search for Modula-3 packages and files.
@@ -516,6 +607,8 @@ Wyszukiwarka modu³ów i plików Modula-3.
 Summary:	Implements a Modula-3 interface to TCP sockets
 Summary(pl):	Interfejs Modula-3 do gniazdek TCP
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description tcp
 Implements a Modula-3 interface to TCP sockets.
@@ -527,6 +620,8 @@ Implementacja interfejsu Modula-3 do gniazdek TCP.
 Summary:	Library for retrieving documents from the World Wide Web using an http proxy server
 Summary(pl):	Biblioteka do ¶ci±gania dokumentów z WWW przez proxy http
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description web
 Library for retrieving documents from the World Wide Web using an http
@@ -539,6 +634,8 @@ Biblioteka do ¶ci±gania dokumentów z WWW przy u¿yciu proxy http.
 Summary:	Modula-3 abstract syntax tree (AST) toolkit
 Summary(pl):	Toolkit Modula-3 do abstrakcyjnego drzewa sk³adni (AST)
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3tk
 Modula-3 abstract syntax tree (AST) toolkit.
@@ -550,6 +647,8 @@ Toolkit Modula-3 do abstrakcyjnego drzewa sk³adni (AST).
 Summary:	The network objects runtime library
 Summary(pl):	Biblioteka obiektów sieciowych
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description netobj
 The network objects runtime library.
@@ -561,6 +660,8 @@ Biblioteka obiektów sieciowych.
 Summary:	A library providing log-based persistent objects
 Summary(pl):	Biblioteka obiektów opartych o dziennik
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description stable
 A library providing log-based persistent objects.
@@ -572,6 +673,8 @@ Biblioteka dostarczaj±ca obiekty oparte o dziennik.
 Summary:	Modula-3 interface to the X library
 Summary(pl):	Interfejs Modula-3 do biblioteki X
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description X11
 Modula-3 interface to the X library.
@@ -583,6 +686,8 @@ Interfejs Modula-3 do biblioteki X.
 Summary:	Modula-3 interface to the PEX 3D graphics library
 Summary(pl):	Interfejs Modula-3 do biblioteki graficznej 3D PEX
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description PEX
 Modula-3 interface to the PEX 3D graphics library.
@@ -594,6 +699,8 @@ Interfejs Modula-3 do biblioteki graficznej 3D PEX.
 Summary:	Modula-3 interface to the OpenGL 3D graphics library
 Summary(pl):	Interfejs Modula-3 do biblioteki graficznej 3D OpenGL
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description opengl
 Modula-3 interface to the OpenGL 3D graphics library.
@@ -605,6 +712,8 @@ Interfejs Modula-3 do biblioteki graficznej 3D OpenGL.
 Summary:	Modula-3 interface to the X/Motif library
 Summary(pl):	Interfejs Modula-3 do biblioteki X/Motif
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description motif
 Modula-3 interface to the X/Motif library.
@@ -616,6 +725,8 @@ Interfejs Modula-3 do biblioteki X/Motif.
 Summary:	Modula-3 version of Tetris
 Summary(pl):	Wersja Tetrisa w Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description tetris
 Modula-3 version of Tetris.
@@ -627,6 +738,8 @@ Wersja Tetrisa napisana w Moduli-3.
 Summary:	Modula-3 version of the PC game, columns
 Summary(pl):	Wersja gry columns w Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description columns
 Modula-3 version of the PC game, columns.
@@ -638,6 +751,8 @@ Wersja gry columns napisana w Moduli-3.
 Summary:	This library, ui, implements the Trestle window-system toolkit
 Summary(pl):	Implementacja toolkitu okienkowego Trestle
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description ui
 This library, ui, implements the Trestle window-system toolkit.
@@ -649,6 +764,8 @@ Ta biblioteka to implementacja toolkitu okienkowego Trestle.
 Summary:	Library of playing card images
 Summary(pl):	Biblioteka obrazków kart do gry
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description bicycle
 Library of playing card images.
@@ -660,6 +777,8 @@ Biblioteka obrazków kart do gry.
 Summary:	Modula-3 version of SeaHaven towers
 Summary(pl):	Wersja pasjansa SeaHaven towers w Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description solitaire
 Modula-3 version of SeaHaven towers.
@@ -671,10 +790,12 @@ Wersja pasjansa SeaHaven towers napisana w Moduli-3.
 Summary:	Modula-3 game similar to minesweeper, inspired by the crumbling facade of SRC's building
 Summary(pl):	Gra podobna do sapera w Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description badbricks
-Modula-3 game similar to minesweeper, inspired by the crumbling facade of
-SRC's building.
+Modula-3 game similar to minesweeper, inspired by the crumbling facade
+of SRC's building.
 
 %description badbricks -l pl
 Gra napisana w Moduli-3 podobna do sapera (Minesweepera).
@@ -683,6 +804,8 @@ Gra napisana w Moduli-3 podobna do sapera (Minesweepera).
 Summary:	Simple Modula-3 lexical token scanner
 Summary(pl):	Prosty skaner tokenów leksykalnych do Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3scan
 Simple Modula-3 lexical token scanner.
@@ -694,6 +817,8 @@ Prosty skaner tokenów leksykalnych do Moduli-3.
 Summary:	Convert batches of Modula-3 source to interconnected HTML
 Summary(pl):	Konwerter paczek ¼róde³ w Moduli-3 na powi±zany HTML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3tohtml
 Convert batches of Modula-3 source to interconnected HTML.
@@ -705,6 +830,8 @@ Konwerter paczek ¼róde³ w Moduli-3 na HTML z powi±zaniami.
 Summary:	Parse Modula-3 source code and insert HTML markup
 Summary(pl):	Parser ¼róde³ w Moduli-3 wstawiaj±cy tagi HTML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3markup
 Parse Modula-3 source code and insert HTML markup.
@@ -716,6 +843,8 @@ Parser ¼róde³ w Moduli-3 wstawiaj±cy tagi HTML.
 Summary:	Convert one Modula-3 source to an HTML file
 Summary(pl):	Konwerter pojedynczego ¼ród³a w Moduli-3 na plik HTML
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3tohtmlf
 Convert one Modula-3 source to an HTML file.
@@ -727,6 +856,8 @@ Konwerter pojedynczego ¼ród³a w Moduli-3 na plik HTML.
 Summary:	Additions to the tcp library
 Summary(pl):	Dodatki do biblioteki tcp
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description tcpextras
 Additions to the tcp library.
@@ -738,6 +869,8 @@ Dodatki do biblioteki tcp.
 Summary:	HTTP server that provides WWW browsing of the installed Modula-3 system
 Summary(pl):	Serwer HTTP pozwalaj±cy na przegl±danie systemu Modula-3 przez WWW
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3browser
 HTTP server that provides WWW browsing of the installed Modula-3
@@ -751,6 +884,8 @@ systemu Modula-3.
 Summary:	Thin Modula-3 veneer on the TCL library (version 6.2)
 Summary(pl):	Wrapper Modula-3 do biblioteki TCL (w wersji 6.2)
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description tcl
 Thin Modula-3 veneer on the TCL library (version 6.2).
@@ -762,6 +897,8 @@ Wrapper Modula-3 do biblioteki TCL (w wersji 6.2).
 Summary:	Thin Modula-3 veneer on the display Postscript extensions to X
 Summary(pl):	Wrapper Modula-3 do rozszerzeñ X wy¶wietlaj±cych Postscript
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description dps
 Thin Modula-3 veneer on the display Postscript extensions to X.
@@ -773,6 +910,8 @@ Wrapper Modula-3 do rozszerzeñ X wy¶wietlaj±cych Postscript.
 Summary:	Program to display postscript slides in X
 Summary(pl):	Program wy¶wietlaj±cy slajdy w Postscripcie pod X
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description dpsslides
 Program to display postscript slides in X.
@@ -784,6 +923,8 @@ Program wy¶wietlaj±cy slajdy w Postscripcie pod X.
 Summary:	Large collection of useful window widgets
 Summary(pl):	Du¿y zbiór u¿ytecznych widgetów okienkowych
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description vbtkit
 Large collection of useful window widgets.
@@ -795,6 +936,8 @@ Du¿y zbiór u¿ytecznych widgetów okienkowych.
 Summary:	Modula-3 variants of the PC game, tetris
 Summary(pl):	Warianty gry Tetris w Moduli-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description fours
 Modula-3 variants of the PC game, tetris.
@@ -806,6 +949,8 @@ Warianty gry Tetris w Moduli-3.
 Summary:	Graphically display in real-time the state of each heap page
 Summary(pl):	Graficzne wy¶wietlanie stanu stron sterty
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description showheap
 Graphically display in real-time the state of each heap page.
@@ -817,6 +962,8 @@ Graficzne wy¶wietlanie stanu stron sterty.
 Summary:	Program to capture a showheap trace
 Summary(pl):	Program do zachowywania wyników showheap
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description recordheap
 Program to capture a showheap trace.
@@ -828,6 +975,8 @@ Program do zachowywania wyników showheap.
 Summary:	Graphically display the log captured by recordheap
 Summary(pl):	Graficzne wy¶wietlanie loga zachowanego przez recordheap
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description replayheap
 Graphically display the log captured by recordheap.
@@ -839,6 +988,8 @@ Graficzne wy¶wietlanie loga zachowanego przez recordheap.
 Summary:	Graphically display in real-time per-type allocations
 Summary(pl):	Graficzne wy¶wietlanie alokacji w czasie rzeczywistym
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description shownew
 Graphically display in real-time per-type allocations.
@@ -851,6 +1002,8 @@ rzeczywistym.
 Summary:	Graphically display in real-time the state of each thread
 Summary(pl):	Graficzne wy¶wietlanie stanu w±tków w czasie rzeczywistym
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description showthread
 Graphically display in real-time the state of each thread.
@@ -862,6 +1015,8 @@ Graficzne wy¶wietlanie stanu w±tków w czasie rzeczywistym.
 Summary:	Support for displaying bitmap images
 Summary(pl):	Wsparcie dla wy¶wietlania obrazków
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description images
 Support for displaying bitmap images.
@@ -873,6 +1028,8 @@ Wsparcie dla wy¶wietlania obrazków.
 Summary:	Low-level interface to the J-video hardware, needed by videovbt
 Summary(pl):	Niskopoziomowy interfejs do urz±dzeñ J-video, potrzebny do videovbt
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description jvideo
 Low-level interface to the J-video hardware, needed by videovbt.
@@ -884,6 +1041,8 @@ Niskopoziomowy interfejs do urz±dzeñ J-video, potrzebny do videovbt.
 Summary:	Window widget that displays live video images
 Summary(pl):	Widget okienkowy wy¶wietlaj±cy filmy
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description videovbt
 Window widget that displays live video images.
@@ -895,6 +1054,8 @@ Widget okienkowy wy¶wietlaj±cy filmy.
 Summary:	Bitmaps, cursors and stuff used by formsvbt
 Summary(pl):	Bitmapy, kursory i inne rzeczy u¿ywane przez formsvbt
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description formsvbtpixmaps
 Bitmaps, cursors and stuff used by formsvbt.
@@ -906,6 +1067,8 @@ Bitmapy, kursory i inne rzeczy u¿ywane przez formsvbt.
 Summary:	High-level language based on S-expressions that makes it easy to assemble VBTs (windows) using the TeX metaphors of boxes and glue
 Summary(pl):	Wysokopoziomowy jêzyk bazuj±cy na S-wyra¿eniach u³atwiaj±cy sk³adanie VBT podobnie do TeX-a
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description formsvbt
 High-level language based on S-expressions that makes it easy to
@@ -919,6 +1082,8 @@ sk³adaæ VBT (okienka) u¿ywaj±c TeX-owych okre¶leñ "pude³ek i kleju".
 Summary:	A 1-1/2 view GUI editor for FormsVBT expressions
 Summary(pl):	Edytor graficzny wyra¿eñ FormsVBT
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description formsedit
 A 1-1/2 view GUI editor for FormsVBT expressions.
@@ -930,6 +1095,8 @@ Edytor graficzny wyra¿eñ FormsVBT.
 Summary:	Simple integrated development environment based on emacs
 Summary(pl):	Zintegorowane ¶rodowisko programistyczne bazuj±ce na emacsie
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3ide
 Simple integrated development environment based on emacs.
@@ -941,6 +1108,8 @@ Proste zintegrowane ¶rodowisko programistyczne bazuj±ce na emacsie.
 Summary:	A demo of fisheye views for graph browsing
 Summary(pl):	Demo widoków do przegl±dania grafów
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description fisheye
 A demo of fisheye views for graph browsing.
@@ -952,6 +1121,8 @@ Demo widoków do przegl±dania grafów.
 Summary:	A 10-key calculator using FormsVBT
 Summary(pl):	10-klawiszowy kalkulator u¿ywaj±cy FormsVBT
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description calculator
 A 10-key calculator using FormsVBT.
@@ -963,6 +1134,8 @@ A 10-key calculator using FormsVBT.
 Summary:	A rotating cube
 Summary(pl):	Obracaj±ca siê kostka
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description cube
 A rotating cube.
@@ -974,6 +1147,8 @@ Obracaj±ca siê kostka.
 Summary:	A network object graphical board
 Summary(pl):	Obiekt sieciowy tablicy graficznej
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description board
 A network object graphical board.
@@ -985,6 +1160,8 @@ Okiekt sieciowy tablicy graficznej.
 Summary:	Support for animated views of source code
 Summary(pl):	Wsparcie dla animowanego podgl±du kodu ¼ród³owego
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description codeview
 Support for animated views of source code.
@@ -996,6 +1173,8 @@ Wsparcie dla animowanego kodu ¼ród³owego.
 Summary:	Program to manually test drive source code animations
 Summary(pl):	Program do testowania animacji kodu ¼ród³owego
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description rehearsecode
 Program to manually test drive source code animations.
@@ -1007,6 +1186,8 @@ Program do rêcznego testowania animacji kodu ¼ród³owego.
 Summary:	Low-level animation support
 Summary(pl):	Niskopoziomowe wsparcie dla animacji
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description mg
 Low-level animation support.
@@ -1018,6 +1199,8 @@ Niskopoziomowe wsparcie dla animacji.
 Summary:	Collection of easier-to-use animation widgets
 Summary(pl):	Zestaw widgetów do animacji
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description mgkit
 Collection of easier-to-use animation widgets.
@@ -1029,6 +1212,8 @@ Zestaw ³atwych w u¿yciu widgetów do animacji.
 Summary:	Collection of 3D animation widgets
 Summary(pl):	Zestaw widgetów do animacji 3D
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description anim3D
 Collection of 3D animation widgets.
@@ -1040,6 +1225,8 @@ Zestaw widgetów do animacji 3D.
 Summary:	Library for syntaxic analysis
 Summary(pl):	BIblioteka analizy sk³adniowej
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description synloc
 Library for syntaxic analysis.
@@ -1051,6 +1238,8 @@ Biblioteka analizy sk³adniowej.
 Summary:	Extensions to synloc
 Summary(pl):	Rozszerzenia do synloc
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description synex
 Extensions to synloc.
@@ -1062,6 +1251,8 @@ Rozszerzenia do synloc.
 Summary:	Meta syntax for synex
 Summary(pl):	Metask³adnia do synex
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description metasyn
 Meta syntax for synex.
@@ -1073,6 +1264,8 @@ Metask³adnia dla synex.
 Summary:	The Obliq interpreter
 Summary(pl):	Interpreter Obliq
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description obliq
 The Obliq interpreter.
@@ -1084,6 +1277,8 @@ Interpreter Obliq.
 Summary:	Integrate the sgml library to Obliq
 Summary(pl):	Zintegrowana biblioteka SGML do Obliq
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description sgmlobliq
 Integrate the sgml library to Obliq.
@@ -1095,6 +1290,8 @@ Zintegrowana biblioteka SGML do Obliq.
 Summary:	The interesting event preprocessor needed by zeus
 Summary(pl):	Preprocesor zdarzeñ potrzebny do zeusa
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3zume
 The interesting event preprocessor needed by zeus.
@@ -1106,6 +1303,8 @@ Preprocesor zdarzeñ potrzebny do zeusa.
 Summary:	The algorithm animation toolkit
 Summary(pl):	Toolkit do animacji algorytmicznych
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description zeus
 The algorithm animation toolkit.
@@ -1117,6 +1316,8 @@ Toolkit do animacji algorytmicznych.
 Summary:	A collection of algoritm animations
 Summary(pl):	Zestaw animacji algorytmicznych
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description mentor
 A collection of algoritm animations.
@@ -1128,6 +1329,8 @@ Zestaw animacji algorytmicznych.
 Summary:	In-memory database library, used by the package tools
 Summary(pl):	Biblioteka bazy danych trzymanej w pamiêci
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description smalldb
 In-memory database library, used by the package tools.
@@ -1140,6 +1343,8 @@ narzêdzia pakietowe.
 Summary:	Client program(s) to access the package tools
 Summary(pl):	Program(y) klienckie dostêpu do narzêdzi pakietowych
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description pkgtool
 Client program(s) to access the package tools.
@@ -1151,6 +1356,8 @@ Program(y) klienckie dostêpu do narzêdzi pakietowych.
 Summary:	Prototype of an easy-to-use distributed programming environment
 Summary(pl):	Prototyp ¶rodowiska do programowania rozproszonego
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description visualobliq
 Prototype of an easy-to-use distributed programming environment.
@@ -1162,6 +1369,8 @@ Prototyp ³atwego w u¿yciu ¶rodowiska do programowania rozproszonego.
 Summary:	A simple query program used by vorun
 Summary(pl):	Prosty program zapytañ u¿ywany przez vorun
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description voquery
 A simple query program used by vorun.
@@ -1173,6 +1382,8 @@ Prosty program zapytañ u¿ywany przez vorun.
 Summary:	A safe visual obliq interpreter suitable for embedding in the WWW
 Summary(pl):	Bezpieczny wizualny interpreter Obliq do zagnie¿d¿ania w WWW
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description vorun
 A safe visual obliq interpreter suitable for embedding in the WWW.
@@ -1185,6 +1396,8 @@ WWW.
 Summary:	An HTML/cgi gateway, required to embed Visual Obliq code in the WWW
 Summary(pl):	Bramka HTML/cgi, potrzebna do zagnie¿d¿ania Visual Obliq w WWW
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description vocgi
 An HTML/cgi gateway, required to embed Visual Obliq code in the WWW.
@@ -1196,6 +1409,8 @@ Bramka HTML/cgi potrzebna do zagnie¿d¿ania kodu Visual Obliq w WWW.
 Summary:	A little mh program used by Postcard
 Summary(pl):	Ma³y program mh u¿ywany przez Postcard
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description llscan
 A little mh program used by Postcard.
@@ -1207,6 +1422,8 @@ Ma³y program mh u¿ywany przez Postcard.
 Summary:	An integrated mail/news reader
 Summary(pl):	Zintegrowany czytnik poczty i newsów
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description postcard
 An integrated mail/news reader.
@@ -1218,6 +1435,8 @@ Zintegrowany czytnik poczty i newsów.
 Summary:	A library of useful E-lisp code for Modula-3-mode in gnuemacs, also a program to build Modula-3 tags
 Summary(pl):	Biblioteka kodu E-lisp do trybu Modula-3 w GNU emacsie
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description gnuemacs
 A library of useful E-lisp code for Modual-3-mode in gnuemacs, also a
@@ -1231,6 +1450,8 @@ tak¿e program do budowania tagów Modula-3.
 Summary:	A library for displaying HTML pages inside a VBT
 Summary(pl):	Biblioteka do wy¶wietlania stron HTML w VBT
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description webvbt
 A library for displaying HTML pages inside a VBT.
@@ -1242,6 +1463,8 @@ Biblioteka do wy¶wietlania stron HTML w VBT.
 Summary:	A web browser with support for interactive content
 Summary(pl):	Przegl±darka WWW ze wsparciem dla zawarto¶ci interaktywnej
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description webscape
 A web browser with support for interactive content.
@@ -1253,6 +1476,8 @@ Przegl±darka WWW ze wsparciem dla zawarto¶ci interaktywnej.
 Summary:	A web browser that uses a new metaphor: decks of web pages
 Summary(pl):	Przegl±darka WWW u¿ywaj±ca nowego stylu: pokrycia stron WWW
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description deckscape
 A web browser that uses a new metaphor: decks of web pages.
@@ -1264,6 +1489,8 @@ Przegl±darka WWW u¿ywaj±ca nowego stylu: pokrycia stron WWW.
 Summary:	An integrated mail/news/web client
 Summary(pl):	Zintegrowany klient poczty, newsów i WWW
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description webcard
 An integrated mail/news/web client.
@@ -1275,6 +1502,8 @@ Zintegrowany klient poczty, newsów i WWW.
 Summary:	Interface to optical character recognition library (DECstation only)
 Summary(pl):	Interfejs do biblioteki OCR (tylko DECstation)
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description ocr
 Interface to optical character recognition library (DECstation only).
@@ -1287,6 +1516,8 @@ na DECstation).
 Summary:	The virtual paper document viewer
 Summary(pl):	Przegl±darka wirtualnych dokumentów
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description lectern
 The virtual paper document viewer.
@@ -1298,6 +1529,8 @@ Przegl±darka wirtualnych dokumentów.
 Summary:	Library for hypertext transfer protocol (HTTP)
 Summary(pl):	Biblioteka obs³ugi protoko³u HTTP
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description http
 Library for hypertext transfer protocol (HTTP).
@@ -1309,6 +1542,8 @@ Biblioteka obs³ugi protoko³u HTTP.
 Summary:	Program that takes a URL and prints out the web document
 Summary(pl):	Program przyjmuj±cy URL i drukuj±cy wskazywany dokument
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description webcat
 Program that takes a URL and prints out the web document.
@@ -1320,6 +1555,8 @@ Program przyjmuj±cy URL i drukuj±cy wskazywany przez niego dokument.
 Summary:	Introduction and documentation for Polytechnique Montreal Modula-3
 Summary(pl):	Wprowadzenie i dokumentacja do Polytechnique Montreal Modula-3
 Group:		Development/Languages/Modula3
+Group(de):	Entwicklung/Sprachen/Modula3
+Group(pl):	Programowanie/Jêzyki/Modula3
 
 %description m3intro
 Introduction and documentation for Polytechnique Montreal Modula-3.
@@ -1328,27 +1565,21 @@ Introduction and documentation for Polytechnique Montreal Modula-3.
 Wprowadzenie i dokumentacja do Polytechnique Montreal Modula-3.
 
 %prep
-%setup -q
+%setup -q -b3
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 install %{SOURCE1} m3config/src/LINUXLIBC6
 install %{SOURCE2} m3config/src/COMMON
 rm -rf $RPM_BUILD_ROOT
 
 %build
-%ifos linux
-%ifarch %{ix86}
-
-%{__make} -f Makefile.LINUXLIBC6 \
-	M3OPTIONS="-DLIST_FILES -DSETROOT=%{_prefix} -DEXPORTPATH=$RPM_BUILD_ROOT"
-%endif
-%else
 %{__make} \
 	M3OPTIONS="-DLIST_FILES -DSETROOT=%{_prefix} -DEXPORTPATH=$RPM_BUILD_ROOT"
-%endif
 
 %install
+rm -rf $RPM_BUILD_ROOT
 %{__make} nothing
 
 cd files

@@ -1,0 +1,253 @@
+--- pm3-1.1.15/boot-LINUXELF/m3core/LINUXELF/RTHeapDepC.c.orig	Tue Sep  5 23:57:09 2000
++++ pm3-1.1.15/boot-LINUXELF/m3core/LINUXELF/RTHeapDepC.c	Sat Nov  3 01:14:08 2001
+@@ -75,10 +75,10 @@
+ #include <sys/sem.h>
+ #include <sys/signal.h>
+ #include <sys/socket.h>
+-#include <sys/socketcall.h>
+ #include <sys/uio.h>
+ #include <sys/ipc.h>
+ #include <dirent.h>
++#include <linux/net.h>
+ 
+ extern int RT0u__inCritical;
+ #define ENTER_CRITICAL RT0u__inCritical++
+@@ -96,8 +96,8 @@
+ 
+ int accept(sockfd, peer, paddrlen)
+ int sockfd;
+-const struct sockaddr *peer;
+-int *paddrlen;
++struct sockaddr *peer;
++socklen_t *paddrlen;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -139,7 +139,7 @@
+ }
+ 
+ int adjtime(delta, olddelta)
+-struct timeval *delta;
++const struct timeval *delta;
+ struct timeval *olddelta;
+ { int result;
+ 
+@@ -216,7 +216,7 @@
+ int bind(sockfd, myaddr, addrlen)
+ int sockfd;
+ const struct sockaddr *myaddr;
+-int addrlen;
++socklen_t addrlen;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -309,7 +309,7 @@
+ int connect(sockfd, saddr, addrlen)
+ int sockfd;
+ const struct sockaddr *saddr;
+-int addrlen;
++socklen_t addrlen;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -524,7 +524,7 @@
+ int getpeername(sockfd, addr, paddrlen)
+ int sockfd;
+ struct sockaddr *addr;
+-int *paddrlen;
++socklen_t *paddrlen;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -569,7 +569,7 @@
+ int getsockname(sockfd, addr, paddrlen)
+ int sockfd;
+ struct sockaddr *addr;
+-int *paddrlen;
++socklen_t *paddrlen;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -590,7 +590,7 @@
+ int getsockopt(fd, level, optname, optval, optlen)
+ int fd, level, optname;
+ void *optval;
+-int *optlen;
++socklen_t *optlen;
+ { int result;
+ 
+   unsigned long args[5];
+@@ -773,8 +773,8 @@
+ 
+ int msgrcv(msqid, msgp, msgsz, msgtyp, msgflg)
+ int msqid;
+-struct msgbuf *msgp;
+-int msgsz;
++void *msgp;
++size_t msgsz;
+ long msgtyp;
+ int msgflg;
+ { int result;
+@@ -794,8 +794,8 @@
+ 
+ int msgsnd(msqid, msgp, msgsz, msgflg)
+ int msqid;
+-struct msgbuf *msgp;
+-int msgsz;
++const void *msgp;
++size_t msgsz;
+ int msgflg;
+ { int result;
+ 
+@@ -881,7 +881,7 @@
+ int readv(d, iov, count)
+ int d;
+ const struct iovec *iov;
+-size_t count;
++int count;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -902,7 +902,7 @@
+ int sockfd;
+ void *buffer;
+ size_t len;
+-unsigned int flags;
++int flags;
+ { int result;
+ 
+   unsigned long args[4];
+@@ -924,9 +924,9 @@
+ int sockfd;
+ void *buffer;
+ size_t len;
+-unsigned flags;
++int flags;
+ struct sockaddr *to;
+-int *tolen;
++socklen_t *tolen;
+ { int result;
+ 
+   unsigned long args[6];
+@@ -951,7 +951,7 @@
+ int recvmsg(sockfd, msg, flags)
+ int sockfd;
+ struct msghdr *msg;
+-unsigned flags;
++int flags;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -1019,11 +1019,25 @@
+   return result;
+ }
+ 
+-int semctl(semid, semnum, cmd, arg)
+-int semid, cmd;
+-int semnum;
+-union semun arg;
++#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
++/* union semun is defined by including <sys/sem.h> */
++#else
++/* according to X/OPEN we have to define it ourselves */
++union semun {
++       int val;                    /* value for SETVAL */
++       struct semid_ds *buf;       /* buffer for IPC_STAT, IPC_SET */
++       unsigned short *array;      /* array for GETALL, SETALL */
++       struct seminfo *__buf;      /* buffer for IPC_INFO */
++};
++#endif
++
++int semctl(int semid, int semnum, int cmd, ...)
+ { int result;
++  union semun arg;
++  va_list va;
++  va_start(va,cmd);
++  arg=va_arg(va,union semun);
++  va_end(va);
+ 
+   ENTER_CRITICAL;
+   switch (cmd) {
+@@ -1067,7 +1081,7 @@
+ int sockfd;
+ const void *buffer;
+ size_t len;
+-unsigned flags;
++int flags;
+ { int result;
+ 
+   unsigned long args[4];
+@@ -1088,7 +1102,7 @@
+ int sendmsg(sockfd, msg, flags)
+ int sockfd;
+ const struct msghdr *msg;
+-unsigned flags;
++int flags;
+ { int result;
+ 
+   unsigned long args[3];
+@@ -1122,9 +1136,9 @@
+ int sockfd;
+ const void *buffer;
+ size_t len;
+-unsigned flags;
++int flags;
+ const struct sockaddr *to;
+-int tolen;
++socklen_t tolen;
+ { int result;
+ 
+   unsigned long args[6];
+@@ -1225,7 +1239,7 @@
+ int setsockopt(fd, level, optname, optval, optlen)
+ int fd, level, optname;
+ const void *optval;
+-int optlen;
++socklen_t optlen;
+ { int result;
+ 
+   unsigned long args[5];
+@@ -1274,7 +1288,7 @@
+   return result;
+ }
+ 
+-int sigaction(int signum, struct sigaction *act, struct sigaction *oldact)
++int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact)
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1436,8 +1450,8 @@
+ }
+ 
+ int utimes(file, tvp)
+-char *file;
+-struct timeval *tvp;
++const char *file;
++const struct timeval *tvp;
+ { int result;
+ 
+   ENTER_CRITICAL;
+@@ -1498,7 +1512,7 @@
+ int writev(fd, iov, ioveclen)
+ int fd;
+ const struct iovec *iov;
+-size_t ioveclen;
++int ioveclen;
+ { int result;
+ 
+   ENTER_CRITICAL;
+--- pm3-1.1.15/boot-LINUXELF/m3core/LINUXELF/RTStackC.c.orig	Tue Sep  5 23:57:09 2000
++++ pm3-1.1.15/boot-LINUXELF/m3core/LINUXELF/RTStackC.c	Sat Nov  3 01:24:16 2001
+@@ -27,9 +27,9 @@
+   jmp_buf *env = (jmp_buf *)start;
+ 
+   if (len == sizeof (jmp_buf)) {
+-    f->pc = (void *)((*env)[0].__pc);
+-    f->sp = (void *)((*env)[0].__bp);
+-    f->fp = (void *)((*env)[0].__sp);
++    f->pc = (void *)((*env)[0].__jmpbuf[5]); /* JB_PC */
++    f->sp = (void *)((*env)[0].__jmpbuf[3]); /* JB_BP */
++    f->fp = (void *)((*env)[0].__jmpbuf[4]); /* JB_SP */
+   } else
+     f->pc = f->sp = 0;
+ }
