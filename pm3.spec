@@ -862,10 +862,6 @@ rm -rf $RPM_BUILD_ROOT
 %install
 %{__make} nothing
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* || :
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/m3/i386-pld-linux/m3cgc1
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/m3/pkg/*/LINUXLIBC6/*.so || :
-
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man{1,6}/*
 
 cd files
