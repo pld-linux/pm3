@@ -8,7 +8,7 @@ Group(pl):	Programowanie/Jêzyki
 Source:		ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}-src.tgz
 Patch:		pm3-debian.patch
 Requires:	libpm3 = %{version}
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Modula-3 distribution of Ecole Polytechnique de Montreal is based
