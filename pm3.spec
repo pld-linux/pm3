@@ -86,7 +86,7 @@ tego samego ¼ród³a.
 
 %package m3doc
 Summary:	m3doc produces both html and latex/postscript from the same source
-Summary(pl):	m3doc do produkcji HTML i LaTeX-a/postscripta z tego samego ¼ród³a
+Summary(pl):	m3doc do produkcji HTML i LaTeXa/postscripta z tego samego ¼ród³a
 Group:		Development/Languages/Modula3
 
 %description m3doc
@@ -142,14 +142,14 @@ Narzêdzie do t³umaczenia skomentowanych plików w Moduli-3 na HTML.
 
 %package sgmlconv
 Summary:	Filter HTML files and convert HTML files to LaTeX
-Summary(pl):	Filtr do plików HTML i konwerter do LaTeX-a
+Summary(pl):	Filtr do plików HTML i konwerter do LaTeXa
 Group:		Development/Languages/Modula3
 
 %description sgmlconv
 filter HTML files and convert HTML files to LaTeX.
 
 %description sgmlconv -l pl
-FIltr do plików HTML i konwerter HTML do LaTeX-a.
+FIltr do plików HTML i konwerter HTML do LaTeXa.
 
 %package sgmllinear
 Summary:	Group several HTML files into a linear document
@@ -175,14 +175,14 @@ Narzêdzia zwi±zane z SGML.
 
 %package m3textohtml
 Summary:	Convert Modula-3 units from LaTeX markup to HTML markup
-Summary(pl):	Konwerter plików Modula-3 z LaTeX-a do HTML
+Summary(pl):	Konwerter plików Modula-3 z LaTeXa do HTML
 Group:		Development/Languages/Modula3
 
 %description m3textohtml
 Convert Modula-3 units from LaTeX markup to HTML markup.
 
 %description m3textohtml -l pl
-Konwerter plików Modula-3 z LaTeX-a do HTML.
+Konwerter plików Modula-3 z LaTeXa do HTML.
 
 %package sgmlnormalize
 Summary:	Convert a SGML file to its canonical form
@@ -433,7 +433,7 @@ Wydruki dla Moduli-3.
 
 %package m3totex
 Summary:	Wraps Modula-3 source in enough TeX to make it printable
-Summary(pl):	Filtr ¼róde³ Moduli-3 do TeX-a w celu wydruku
+Summary(pl):	Filtr ¼róde³ Moduli-3 do TeXa w celu wydruku
 Group:		Development/Languages/Modula3
 
 %description m3totex
@@ -915,7 +915,7 @@ Bitmapy, kursory i inne rzeczy u¿ywane przez formsvbt.
 
 %package formsvbt
 Summary:	High-level language based on S-expressions that makes it easy to assemble VBTs (windows) using the TeX metaphors of boxes and glue
-Summary(pl):	Wysokopoziomowy jêzyk bazuj±cy na S-wyra¿eniach u³atwiaj±cy sk³adanie VBT podobnie do TeX-a
+Summary(pl):	Wysokopoziomowy jêzyk bazuj±cy na S-wyra¿eniach u³atwiaj±cy sk³adanie VBT podobnie do TeXa
 Group:		Development/Languages/Modula3
 
 %description formsvbt
@@ -924,7 +924,7 @@ assemble VBTs (windows) using the TeX metaphors of boxes and glue.
 
 %description formsvbt -l pl
 Wysokopoziomowy jêzyk bazuj±cy na S-wyra¿eniach pozwalaj±cy ³atwo
-sk³adaæ VBT (okienka) u¿ywaj±c TeX-owych okre¶leñ "pude³ek i kleju".
+sk³adaæ VBT (okienka) u¿ywaj±c TeXowych okre¶leñ "pude³ek i kleju".
 
 %package formsedit
 Summary:	A 1-1/2 view GUI editor for FormsVBT expressions
