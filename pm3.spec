@@ -355,14 +355,14 @@ Kompilator Modula-3.
 
 %package m3bootstrap
 Summary:	Cross compiles bootstrap packages for other platforms
-Summary(pl):	Pakiety do kroskompilacji na inne platformy
+Summary(pl):	Pakiety do kompilacji skro¶nej na inne platformy
 Group:		Development/Languages/Modula3
 
 %description m3bootstrap
 Cross compiles bootstrap packages for other platforms.
 
 %description m3bootstrap -l pl
-Pakiety do kroskompilacji na inne platformy.
+Pakiety do kompilacji skro¶nej na inne platformy.
 
 %package m3export
 Summary:	Export and compiles a new release of PM3 from the CVS repository
