@@ -875,340 +875,340 @@ for i in * ; do
 done
 
 %files rehearsecode -f files/rehearsecode
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files webscape -f files/webscape
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3tosgml -f files/m3tosgml
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files dps -f files/dps
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3ide -f files/m3ide
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3staloneback -f files/m3staloneback
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files metasyn -f files/metasyn
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmlstructure -f files/sgmlstructure
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3coco -f files/m3coco
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files tcp -f files/tcp
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files formsvbtpixmaps -f files/formsvbtpixmaps
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3linker -f files/m3linker
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files tetris -f files/tetris
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files pkgtool -f files/pkgtool
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3gdb -f files/m3gdb
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files realgeometry -f files/realgeometry
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files showthread -f files/showthread
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files codeview -f files/codeview
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files tcl -f files/tcl
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files ui -f files/ui
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files mtex -f files/mtex
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files lectern -f files/lectern
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3totex -f files/m3totex
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files showheap -f files/showheap
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files llscan -f files/llscan
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3markup -f files/m3markup
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files motif -f files/motif
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files mg -f files/mg
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files deckscape -f files/deckscape
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmlconv -f files/sgmlconv
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files fisheye -f files/fisheye
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files visualobliq -f files/visualobliq
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmltom3 -f files/sgmltom3
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3zume -f files/m3zume
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3export -f files/m3export
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3objfile -f files/m3objfile
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3-base -f files/m3-base
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files http -f files/http
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files parseparams -f files/parseparams
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files images -f files/images
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files opengl -f files/opengl
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files X11 -f files/X11
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3tk -f files/m3tk
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files bicycle -f files/bicycle
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files set -f files/set
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files recordheap -f files/recordheap
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmlobliq -f files/sgmlobliq
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3tohtmlf -f files/m3tohtmlf
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files mgkit -f files/mgkit
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files webcard -f files/webcard
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmllinear -f files/sgmllinear
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files dpsslides -f files/dpsslides
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files calculator -f files/calculator
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files voquery -f files/voquery
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files obliq -f files/obliq
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sil -f files/sil
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files PEX -f files/PEX
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files zeus -f files/zeus
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3back -f files/m3back
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files coverage -f files/coverage
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files stable -f files/stable
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3templates -f files/m3templates
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files slisp -f files/slisp
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files webcat -f files/webcat
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files jvideo -f files/jvideo
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3middle -f files/m3middle
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files cg-burs -f files/cg-burs
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files netobj -f files/netobj
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files solitaire -f files/solitaire
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3doc -f files/m3doc
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files digraph -f files/digraph
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files replayheap -f files/replayheap
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files postcard -f files/postcard
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3bootstrap -f files/m3bootstrap
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files tcpextras -f files/tcpextras
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files anim3D -f files/anim3D
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files ocr -f files/ocr
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files vbtkit -f files/vbtkit
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmltools -f files/sgmltools
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files cube -f files/cube
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3quake -f files/m3quake
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files vorun -f files/vorun
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3scan -f files/m3scan
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files mentor -f files/mentor
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files webvbt -f files/webvbt
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3tests -f files/m3tests
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgml -f files/sgml
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3driver -f files/m3driver
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files formsedit -f files/formsedit
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files synex -f files/synex
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files sgmlnormalize -f files/sgmlnormalize
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3intro -f files/m3intro
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3where -f files/m3where
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files videovbt -f files/videovbt
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3front -f files/m3front
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3loader -f files/m3loader
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files badbricks -f files/badbricks
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files table-list -f files/table-list
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files shownew -f files/shownew
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files gnuemacs -f files/gnuemacs
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files tempfiles -f files/tempfiles
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3browser -f files/m3browser
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files web -f files/web
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files formsvbt -f files/formsvbt
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files columns -f files/columns
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files synloc -f files/synloc
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files pp -f files/pp
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files fours -f files/fours
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3textohtml -f files/m3textohtml
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files board -f files/board
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files vocgi -f files/vocgi
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files m3tohtml -f files/m3tohtml
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
 
 %files smalldb -f files/smalldb
-%docdir /usr/lib/m3/www
+%docdir %{_libdir}/m3/www
