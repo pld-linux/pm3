@@ -60,7 +60,7 @@ zaspokajaj±c potrzeby wspó³czesnych programistów systemowych. Zamiast
 zg³êbiaæ nowe cechy, studiowali cechy rodziny jêzyków Modula, które
 sprawdzi³y siê w praktyce, i próbowali upro¶ciæ je w konsekwentny
 jêzyk. Stwierdzili, ¿e wiêkszo¶æ cech zosta³a osi±gniêta w dwóch
-g³ównych celach: wiêkszych mo¿liwo¶ciach i prostrzym, bardziej
+g³ównych celach: wiêkszych mo¿liwo¶ciach i prostszym, bardziej
 systematycznym systemie typów.
 
 Modula-3 zachowuje najlepsze cechy Moduli-2, zapas interfejsów
