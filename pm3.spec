@@ -874,6 +874,9 @@ for i in * ; do
 	sed -e 's/\(man\/man[0-9]\/.*\.[0-9]\)/\1\.gz/' $i.bak > $i
 done
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files rehearsecode -f files/rehearsecode
 %defattr(644,root,root,755)
 %docdir %{_libdir}/m3/www
