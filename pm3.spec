@@ -141,7 +141,7 @@ Translate commented Modula-3 units into html files.
 Narzêdzie do t³umaczenia skomentowanych plików w Moduli-3 na HTML.
 
 %package sgmlconv
-Summary:	filter HTML files and convert HTML files to LaTeX
+Summary:	Filter HTML files and convert HTML files to LaTeX
 Summary(pl):	Filtr do plików HTML i konwerter do LaTeX-a
 Group:		Development/Languages/Modula3
 
