@@ -535,16 +535,16 @@ Implements a Modula-3 interface to TCP sockets.
 Implementacja interfejsu Modula-3 do gniazdek TCP.
 
 %package web
-Summary:	Library for retrieving documents from the World Wide Web using an http proxy server
-Summary(pl):	Biblioteka do ¶ci±gania dokumentów z WWW przez proxy http
+Summary:	Library for retrieving documents from the World Wide Web using an HTTP proxy server
+Summary(pl):	Biblioteka do ¶ci±gania dokumentów z WWW przez proxy HTTP
 Group:		Development/Languages/Modula3
 
 %description web
-Library for retrieving documents from the World Wide Web using an http
+Library for retrieving documents from the World Wide Web using an HTTP
 proxy server.
 
 %description web -l pl
-Biblioteka do ¶ci±gania dokumentów z WWW przy u¿yciu proxy http.
+Biblioteka do ¶ci±gania dokumentów z WWW przy u¿yciu proxy HTTP.
 
 %package m3tk
 Summary:	Modula-3 abstract syntax tree (AST) toolkit
