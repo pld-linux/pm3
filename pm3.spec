@@ -759,15 +759,15 @@ Serwer HTTP pozwalaj±cy na przegl±danie przez WWW zainstalowanego
 systemu Modula-3.
 
 %package tcl
-Summary:	Thin Modula-3 veneer on the TCL library (version 6.2)
-Summary(pl):	Wrapper Modula-3 do biblioteki TCL (w wersji 6.2)
+Summary:	Thin Modula-3 veneer on the Tcl library (version 6.2)
+Summary(pl):	Wrapper Modula-3 do biblioteki Tcl (w wersji 6.2)
 Group:		Development/Languages/Modula3
 
 %description tcl
-Thin Modula-3 veneer on the TCL library (version 6.2).
+Thin Modula-3 veneer on the Tcl library (version 6.2).
 
 %description tcl -l pl
-Wrapper Modula-3 do biblioteki TCL (w wersji 6.2).
+Wrapper Modula-3 do biblioteki Tcl (w wersji 6.2).
 
 %package dps
 Summary:	Thin Modula-3 veneer on the display Postscript extensions to X
