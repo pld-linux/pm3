@@ -1,0 +1,22 @@
+--- pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/texinfo/info/Makefile.in~	Tue Feb 11 17:05:29 1997
++++ pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/texinfo/info/Makefile.in	Fri Apr  7 20:05:52 2000
+@@ -41,7 +41,7 @@
+ LDEFS = -DHANDLE_MAN_PAGES -DNAMED_FUNCTIONS=1 -DDEFAULT_INFOPATH='"$(DEFAULT_INFOPATH)"'
+ 
+ TERMLIBS = @TERMLIBS@
+-LIBS = $(TERMLIBS) -L../libtxi -ltxi @LIBS@
++LIBS = $(TERMLIBS) -lncurses -L../libtxi -ltxi @LIBS@
+ LOADLIBES = $(LIBS)
+ 
+ SHELL = /bin/sh
+--- pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/gdb/Makefile.in~	Tue Nov  3 18:36:10 1998
++++ pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/gdb/Makefile.in	Fri Apr  7 20:30:24 2000
+@@ -56,7 +56,7 @@
+ 
+ # Flags that describe where you can find the termcap library.
+ # This can be overridden in the host Makefile fragment file.
+-TERMCAP = -ltermcap
++TERMCAP = -lncurses
+ 
+ # If you are compiling with GCC, make sure that either 1) You have the
+ # fixed include files where GCC can reach them, or 2) You use the

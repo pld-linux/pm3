@@ -1,0 +1,11 @@
+--- pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/readline/Makefile.in~	Tue Feb 11 17:05:19 1997
++++ pm3-1.1.13/language/modula3/m3tools/m3gdb/gdb/readline/Makefile.in	Fri Apr  7 20:04:42 2000
+@@ -67,7 +67,7 @@
+ 
+ # Comment out "-DVI_MODE" if you don't think that anyone will ever desire
+ # the vi line editing mode and features.
+-READLINE_DEFINES = $(TYPES) -DVI_MODE
++READLINE_DEFINES = $(TYPES) -DVI_MODE -I/usr/include/ncurses
+ 
+ DEBUG_FLAGS = $(MINUS_G)
+ LDFLAGS = $(DEBUG_FLAGS) 
