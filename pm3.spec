@@ -6,9 +6,11 @@ Release:	1
 License:	Open Source, mostly BSD like, some LGPL/GPL
 Group:		Development/Languages/Modula3
 Source0:	ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}-src.tgz
+# Source0-md5:	2688a6aae1155aa05026c99d67d0768e
 Source1:	%{name}-LINUXLIBC6
 Source2:	%{name}-COMMON
 Source3:	ftp://m3.polymtl.ca/pub/m3/targzip/%{name}-%{version}-LINUXLIBC6-boot.tgz
+# Source3-md5:	cc712010beb97ebdcdb87030fc84e93c
 Patch0:		%{name}-readline.patch
 Patch1:		%{name}-ncurses.patch
 Patch2:		%{name}-m3gdb.patch
