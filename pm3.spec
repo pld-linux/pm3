@@ -175,7 +175,7 @@ Group(pl):	Programowanie/Jêzyki/Modula3
 %description sgmllinear
 Group several HTML files into a linear document.
 
-%description sgmllinear
+%description sgmllinear -l pl
 Konwerter grupuj±cy wiele plików HTML w jeden ci±g³y dokument.
 
 %package sgmltools
