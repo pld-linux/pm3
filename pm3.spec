@@ -851,16 +851,16 @@ rm -rf $RPM_BUILD_ROOT
 %ifos linux
 %ifarch %{ix86}
 
-make -f Makefile.LINUXLIBC6 \
+%{__make} -f Makefile.LINUXLIBC6 \
 	M3OPTIONS="-DLIST_FILES -DSETROOT=%{_prefix} -DEXPORTPATH=$RPM_BUILD_ROOT"
 %endif
 %else
-make \
+%{__make} \
 	M3OPTIONS="-DLIST_FILES -DSETROOT=%{_prefix} -DEXPORTPATH=$RPM_BUILD_ROOT"
 %endif
 
 %install
-make nothing
+%{__make} nothing
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/* || :
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/m3/i386-pld-linux/m3cgc1
