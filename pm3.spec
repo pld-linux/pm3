@@ -1340,10 +1340,10 @@ Wprowadzenie i dokumentacja do Polytechnique Montreal Modula-3.
 
 %prep
 %setup -q -b3
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
+%patch -P3 -p1
 install %{SOURCE1} m3config/src/LINUXLIBC6
 install %{SOURCE2} m3config/src/COMMON
 rm -rf $RPM_BUILD_ROOT
